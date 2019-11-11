@@ -1,0 +1,23 @@
+{
+    "name": "jetbro/bluedart",
+    "authors": [
+        {
+            "name": "Amul Patel",
+            "email": "amul@jetbro.in"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "jetbro\\bluedart\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "jetbro\\bluedart\\BluedartApiIntegration"
+            ]
+        }
+    },
+    "require": {}
+}
