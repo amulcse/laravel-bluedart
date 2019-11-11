@@ -37,11 +37,17 @@ class BluedartController extends Controller
                 #echo "<br>";
                 // var_dump($result);
 
-                $log = new Bluedartlog;
+               /*$log = new Bluedartlog;
                 $log->request = json_encode($params);
                 $log->response = json_encode($result->GetServicesforPincodeResult);
                 $log->errormesssage = $result->GetServicesforPincodeResult->ErrorMessage;
-                $log->save();
+                $log->save(); */
+        
+                Bluedartlog::create([
+                    'request' =>json_encode($params),
+                    'response' => json_encode($result->GetServicesforPincodeResult),
+                    'errormesssage' =>  $result->GetServicesforPincodeResult->ErrorMessage
+                ]);
 
                 $response = [];
                 $response['errorcode'] = $result->GetServicesforPincodeResult->IsError ;
